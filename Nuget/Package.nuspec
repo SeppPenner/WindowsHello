@@ -2,27 +2,33 @@
 <package >
   <metadata>
     <id>HaemmerElectronics.SeppPenner.WindowsHello</id>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <authors>SeppPenner</authors>
     <owners>SeppPenner</owners>
     <licenseUrl>https://github.com/SeppPenner/WindowsHello/blob/master/License.txt</licenseUrl>
     <projectUrl>https://github.com/SeppPenner/WindowsHello/</projectUrl>
-    <iconUrl>https://drive.google.com/open?id=1Bw_k7Jhlw5cPZr6pLbIq6FErxtqZhIF5</iconUrl>
+    <iconUrl>https://github.com/SeppPenner/WindowsHello/blob/master/Windows.ico</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
 		WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) in aplications.
-		The assembly was written and tested in .Net 4.7.2.
+		The assembly was written and tested in .Net 4.8.
 	</description>
     <releaseNotes>
-		Version 1.0.0.0 (2019-02-09)** : 1.0 release.
+		Version 1.0.0.1 (2019-05-05) : Updated .Net version to 4.8.
+		Version 1.0.0.0 (2019-02-09) : 1.0 release.
 	</releaseNotes>
-    <copyright>Copyright © Hämmer Electronics 2019</copyright>
+    <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# csharp windows hello windows-hello</tags>
   </metadata>
   <files>
 		<file src="README.md" target="lib/" />
 		<file src="License.txt" target="lib/" />
 		<file src="Documentation\**" target="lib\Documentation" />
+		<file src=".Net 4.5\**" target="lib\net45" />
+		<file src=".Net 4.6\**" target="lib\net46" />
+		<file src=".Net 4.6.2\**" target="lib\net462" />
+		<file src=".Net 4.7\**" target="lib\net47" />
 		<file src=".Net 4.7.2\**" target="lib\net472" />
+		<file src=".Net 4.8\**" target="lib\net48" />
     </files>
 </package>
