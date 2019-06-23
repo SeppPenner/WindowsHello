@@ -41,5 +41,6 @@ This project is mainly taken from https://github.com/sirAndros/KeePassWinHello.
 Change history
 --------------
 
+* **Version 1.0.2.0 (2019-06-23)** : Added icon to the nuget package.
 * **Version 1.0.0.1 (2019-05-05)** : Updated .Net version to 4.8.
 * **Version 1.0.0.0 (2019-02-09)** : 1.0 release.
