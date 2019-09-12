@@ -296,7 +296,7 @@ namespace WindowsHello
             return true;
         }
 
-        private static void DeletePersistentKey()
+        public static void DeletePersistentKey()
         {
             if (TryOpenPersistentKey(out SafeNCryptKeyHandle ngcKeyHandle))
             {
