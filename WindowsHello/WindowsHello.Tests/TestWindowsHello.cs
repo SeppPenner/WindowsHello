@@ -19,8 +19,9 @@ namespace WindowsHello.Tests
         public void WindowsHelloTest()
         {
             var handle = new IntPtr();
+            string message = "Windows Hello Test";
             var data = new byte[] { 0x32, 0x32 };
-            IAuthProvider provider = new WinHelloProvider("Hello", handle);
+            IAuthProvider provider = WinHelloProvider.CreateInstance(message, handle);
             var encryptedData = provider.Encrypt(data);
             var decryptedData = provider.PromptToDecrypt(encryptedData);
             CollectionAssert.AreEqual(data, decryptedData);
