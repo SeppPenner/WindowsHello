@@ -12,6 +12,7 @@ The assembly was written and tested in .Net 4.8.
 [![Nuget](https://img.shields.io/badge/WindowsHello-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.WindowsHello.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/)
 [![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/WindowsHello/badge.svg)](https://snyk.io/test/github/SeppPenner/WindowsHello)
+[![Gitter](https://badges.gitter.im/WindowsHello2/community.svg)](https://gitter.im/WindowsHello2/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Available for
 * NetFramework 4.5
