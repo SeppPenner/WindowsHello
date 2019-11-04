@@ -8,7 +8,7 @@ The assembly was written and tested in .Net 4.8.
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/WindowsHello.svg)](https://github.com/SeppPenner/WindowsHello/issues)
 [![GitHub forks](https://img.shields.io/github/forks/SeppPenner/WindowsHello.svg)](https://github.com/SeppPenner/WindowsHello/network)
 [![GitHub stars](https://img.shields.io/github/stars/SeppPenner/WindowsHello.svg)](https://github.com/SeppPenner/WindowsHello/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/SeppPenner/WindowsHello/master/License.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://raw.githubusercontent.com/SeppPenner/WindowsHello/master/License.txt)
 [![Nuget](https://img.shields.io/badge/WindowsHello-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.WindowsHello.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/)
 [![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/WindowsHello/badge.svg)](https://snyk.io/test/github/SeppPenner/WindowsHello)
