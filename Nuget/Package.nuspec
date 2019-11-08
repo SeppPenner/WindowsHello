@@ -35,16 +35,6 @@
       </group>
 	  <group targetFramework="net472">   
       </group>
-      <group targetFramework="netstandard2.0">
-        <dependency id="NETStandard.Library" version="2.0.0" />
-      </group>
-	  <group targetFramework="netstandard2.1">
-        <dependency id="NETStandard.Library" version="2.1.0" />
-      </group>
-      <group targetFramework="netcoreapp2.2">
-      </group>
-	  <group targetFramework="netcoreapp3.0">
-      </group>
     </dependencies>
   </metadata>
   <files>
@@ -56,10 +46,6 @@
 	  <file src="Source\net47\**" target="lib\net47" />
 	  <file src="Source\net472\**" target="lib\net472" />
 	  <file src="Source\net48\**" target="lib\net48" />
-	  <file src="Source\netstandard2.0\**" target="lib\netstandard2.0" />
-	  <file src="Source\netstandard2.1\**" target="lib\netstandard2.1" />
-	  <file src="Source\netcoreapp2.2\**" target="lib\netcoreapp2.2" />
-	  <file src="Source\netcoreapp3.0\**" target="lib\netcoreapp3.0" />
 	  <file src="..\Icon.png" target="images\" />
    </files>
 </package>
