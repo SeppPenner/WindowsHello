@@ -12,6 +12,7 @@ The assembly was written and tested in .Net 4.8.
 [![Nuget](https://img.shields.io/badge/WindowsHello-Nuget-brightgreen.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HaemmerElectronics.SeppPenner.WindowsHello.svg)](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/)
 [![Known Vulnerabilities](https://snyk.io/test/github/SeppPenner/WindowsHello/badge.svg)](https://snyk.io/test/github/SeppPenner/WindowsHello)
+[![Gitter](https://badges.gitter.im/WindowsHello2/community.svg)](https://gitter.im/WindowsHello2/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Available for
 * NetFramework 4.5
@@ -20,6 +21,10 @@ The assembly was written and tested in .Net 4.8.
 * NetFramework 4.7
 * NetFramework 4.7.2
 * NetFramework 4.8
+* NetStandard 2.0
+* NetStandard 2.1
+* NetCore 2.2
+* NetCore 3.0
 
 ## Basic usage:
 ```csharp
@@ -41,6 +46,7 @@ This project is mainly taken from https://github.com/sirAndros/KeePassWinHello.
 Change history
 --------------
 
+* **Version 1.0.3.0 (2019-11-08)** : Updated nuget packages
 * **Version 1.0.2.0 (2019-06-23)** : Added icon to the nuget package.
 * **Version 1.0.0.1 (2019-05-05)** : Updated .Net version to 4.8.
 * **Version 1.0.0.0 (2019-02-09)** : 1.0 release.
