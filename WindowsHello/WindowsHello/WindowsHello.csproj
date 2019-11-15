@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net45;net46;net462;net47;net472;net48;</TargetFrameworks>
     <AssemblyName>WindowsHello</AssemblyName>
-    <RootNamespace>Serilog</RootNamespace>
+    <RootNamespace>WindowsHello</RootNamespace>
     <Authors>SeppPenner</Authors>
     <Company />
     <Description>
@@ -30,6 +30,10 @@
 
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   </ItemGroup>
 
 </Project>

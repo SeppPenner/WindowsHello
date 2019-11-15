@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2011
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsHello.Tests", "WindowsHello.Tests\WindowsHello.Tests.csproj", "{1CDA9CEF-8B5D-442B-8BC4-4D25F9E2826C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsHello", "WindowsHello\WindowsHello.csproj", "{23B8E703-7DF1-4BD1-B49D-BE06D76C6681}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinHelloTest", "WinHelloTest\WinHelloTest.csproj", "{4822D772-D050-471C-822C-C31EAD47F351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsHello", "WindowsHello\WindowsHello.csproj", "{23B8E703-7DF1-4BD1-B49D-BE06D76C6681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{23B8E703-7DF1-4BD1-B49D-BE06D76C6681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23B8E703-7DF1-4BD1-B49D-BE06D76C6681}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23B8E703-7DF1-4BD1-B49D-BE06D76C6681}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4822D772-D050-471C-822C-C31EAD47F351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4822D772-D050-471C-822C-C31EAD47F351}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4822D772-D050-471C-822C-C31EAD47F351}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4822D772-D050-471C-822C-C31EAD47F351}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
