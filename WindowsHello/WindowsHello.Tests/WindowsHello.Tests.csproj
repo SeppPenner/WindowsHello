@@ -8,6 +8,10 @@
     <RootNamespace>WindowsHello.Tests</RootNamespace>
 
     <ApplicationIcon>Windows.ico</ApplicationIcon>
+
+    <OutputType>Library</OutputType>
+
+    <StartupObject />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
