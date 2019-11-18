@@ -21,12 +21,22 @@ The assembly was written and tested in .Net 4.8.
 * NetFramework 4.7
 * NetFramework 4.7.2
 * NetFramework 4.8
-* NetStandard 2.0
-* NetStandard 2.1
-* NetCore 2.2
-* NetCore 3.0
 
-## Basic usage:
+## Basic usage (Version 1.0.4.0 and above):
+```csharp
+public void WindowsHelloTest()
+{
+    var handle = new IntPtr();
+    var data = new byte[] { 0x32, 0x32 };
+    var provider = WinHelloProvider.CreateInstance("Hello", handle);
+	// Set the persistent key name if you want:
+	provider.SetPersistentKeyName("Test");
+    var encryptedData = provider.Encrypt(data);
+    var decryptedData = provider.PromptToDecrypt(encryptedData);
+}
+```
+
+## Basic usage (Before version 1.0.4.0):
 ```csharp
 public void WindowsHelloTest()
 {
@@ -46,7 +56,8 @@ This project is mainly taken from https://github.com/sirAndros/KeePassWinHello.
 Change history
 --------------
 
-* **Version 1.0.3.0 (2019-11-08)** : Updated nuget packages
+* **Version 1.0.4.0 (2019-11-18)** : Fixed security bug (Thanks to [@Angelelz](https://github.com/Angelelz)).
+* **Version 1.0.3.0 (2019-11-08)** : Updated nuget packages.
 * **Version 1.0.2.0 (2019-06-23)** : Added icon to the nuget package.
 * **Version 1.0.0.1 (2019-05-05)** : Updated .Net version to 4.8.
 * **Version 1.0.0.0 (2019-02-09)** : 1.0 release.
