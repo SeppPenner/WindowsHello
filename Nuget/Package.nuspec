@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>HaemmerElectronics.SeppPenner.WindowsHello</id>
-    <version>1.0.4.0</version>
+    <version>1.0.5.0</version>
     <authors>SeppPenner</authors>
     <owners>SeppPenner</owners>
     <projectUrl>https://github.com/SeppPenner/WindowsHello/</projectUrl>
@@ -18,7 +18,7 @@
 	  The assembly was written and tested in .Net 4.8.
 	</description>
     <releaseNotes>
-	  Version 1.0.4.0 (2019-11-18): Fixed security bug.
+	  Version 1.0.5.0 (2020-05-10): Updated nuget packages.
 	</releaseNotes>
     <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# csharp windows hello windows-hello</tags>
