@@ -1,8 +1,17 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EnvironmentErrorException.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The environment error exception.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WindowsHello.Exceptions
 {
+    using System;
+    using System.Runtime.Serialization;
+
     /// <summary>
     ///     The environment error exception.
     /// </summary>

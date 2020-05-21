@@ -1,8 +1,19 @@
-using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TestWindowsHello.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   This class is used to test the Microsoft Windows Hello
+//   (https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) functionality.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WindowsHello.Tests
 {
+    using System;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     /// <summary>
     ///     This class is used to test the Microsoft Windows Hello
     ///     (https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) functionality.
@@ -17,10 +28,10 @@ namespace WindowsHello.Tests
         public void WindowsHelloTest()
         {
             var handle = new IntPtr();
-            const string message = "Windows Hello Test";
+            const string Message = "Windows Hello Test";
             var data = new byte[] { 0x32, 0x32 };
             Console.WriteLine(BitConverter.ToString(data));
-            var provider = WinHelloProvider.CreateInstance(message, handle);
+            var provider = WinHelloProvider.CreateInstance(Message, handle);
             Console.WriteLine("Instance created.");
             var encryptedData = provider.Encrypt(data);
             Console.WriteLine("Encrypted data:");
@@ -38,10 +49,10 @@ namespace WindowsHello.Tests
         public void WindowsHelloTest2()
         {
             var handle = new IntPtr();
-            const string message = "Windows Hello Test2";
+            const string Message = "Windows Hello Test2";
             var data = new byte[] { 0x32, 0x32 };
             Console.WriteLine(BitConverter.ToString(data));
-            var provider = WinHelloProvider.CreateInstance(message, handle);
+            var provider = WinHelloProvider.CreateInstance(Message, handle);
             Console.WriteLine("Instance created.");
             provider.SetPersistentKeyName("Test");
             Console.WriteLine("PersistentKeyName set to \"Test\".");

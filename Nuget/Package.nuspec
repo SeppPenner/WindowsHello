@@ -23,8 +23,6 @@
     <copyright>Copyright © Hämmer Electronics</copyright>
     <tags>c# csharp windows hello windows-hello</tags>
 	<dependencies>
-      <group targetFramework="net45">   
-      </group>
 	  <group targetFramework="net46">
       </group>
 	  <group targetFramework="net47">	
@@ -40,7 +38,6 @@
   <files>
 	  <file src="README.md" target="" />
 	  <file src="License.txt" target="" />
-	  <file src="Source\net45\**" target="lib\net45" />
 	  <file src="Source\net46\**" target="lib\net46" />
 	  <file src="Source\net462\**" target="lib\net462" />
 	  <file src="Source\net47\**" target="lib\net47" />

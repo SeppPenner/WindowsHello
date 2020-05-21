@@ -1,8 +1,17 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AuthProviderIsUnavailableException.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The authentication provider unavailable exception.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WindowsHello.Exceptions
 {
+    using System;
+    using System.Runtime.Serialization;
+
     /// <summary>
     /// The authentication provider unavailable exception.
     /// </summary>
@@ -41,8 +50,7 @@ namespace WindowsHello.Exceptions
         /// </summary>
         /// <param name="info">The serialization information.</param>
         /// <param name="context">The streaming context.</param>
-        protected AuthProviderIsUnavailableException(SerializationInfo info, StreamingContext context) : base(info,
-            context)
+        protected AuthProviderIsUnavailableException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

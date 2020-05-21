@@ -1,8 +1,17 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WindowsHelloException.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The windows hello exception.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WindowsHello.Exceptions
 {
+    using System;
+    using System.Runtime.Serialization;
+
     /// <summary>
     ///     The windows hello exception.
     /// </summary>

@@ -1,8 +1,17 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AuthProviderUserCancelledException.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   The authentication provider system error exception.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace WindowsHello.Exceptions
 {
+    using System;
+    using System.Runtime.Serialization;
+
     /// <summary>
     /// The authentication provider system error exception.
     /// </summary>
@@ -21,7 +30,7 @@ namespace WindowsHello.Exceptions
         {
         }
 
-        /// <summary>Initializes a new instance of the <see cref="AuthProviderException" /> class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="AuthProviderUserCancelledException" /> class.</summary>
         /// <param name="message">The message describing the error.</param>
         /// <param name="inner">The inner exception causing this exception.</param>
         // ReSharper disable once UnusedMember.Global
@@ -30,12 +39,11 @@ namespace WindowsHello.Exceptions
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AuthProviderException"/> class.
+        /// Initializes a new instance of the <see cref="AuthProviderUserCancelledException"/> class.
         /// </summary>
         /// <param name="info">The serialization information.</param>
         /// <param name="context">The streaming context.</param>
-        protected AuthProviderUserCancelledException(SerializationInfo info, StreamingContext context) : base(info,
-            context)
+        protected AuthProviderUserCancelledException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
     }

@@ -1,4 +1,13 @@
-﻿namespace WindowsHello
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IAuthProvider.cs" company="Haemmer Electronics">
+//   Copyright (c) 2020 All rights reserved.
+// </copyright>
+// <summary>
+//   This interface is used to abstract different authentication providers.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace WindowsHello
 {
     /// <summary>
     /// This interface is used to abstract different authentication providers.
@@ -25,7 +34,6 @@
         /// Sets the persistent key name.
         /// </summary>
         /// <param name="persistentName">The persistent name to use.</param>
-        /// <returns>The local key name as <see cref="string"/>.</returns>
         // ReSharper disable once UnusedMember.Global
         void SetPersistentKeyName(string persistentName);
     }
