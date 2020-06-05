@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net46;net462;net47;net472;net48;</TargetFrameworks>
+    <AssemblyName>WindowsHello</AssemblyName>
+    <RootNamespace>WindowsHello</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageId>HaemmerElectronics.SeppPenner.WindowsHello</PackageId>
+    <Authors>SeppPenner</Authors>
+    <Company>Hämmer Electronics</Company>
+    <Copyright>Copyright © Hämmer Electronics</Copyright>
+    <Description>WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) in aplications. The assembly was written and tested in .Net 4.8.</Description>
+    <PackageTags>c# csharp windows hello windows-hello</PackageTags>
+    <PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
+    <PackageIcon>Icon.png</PackageIcon>
+    <RepositoryType>Github</RepositoryType>
+    <PackageReleaseNotes>Version 1.0.6.0 (2020-06-05): Updated nuget packages, adjusted build to Visual Studio, moved changelog to extra file.</PackageReleaseNotes>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersionTask" Version="5.3.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\License.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\Changelog.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </ItemGroup>
+
+</Project>
