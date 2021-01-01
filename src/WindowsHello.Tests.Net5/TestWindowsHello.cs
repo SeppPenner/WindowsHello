@@ -8,7 +8,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace WindowsHello.Tests
+namespace WindowsHello.Tests.Net5
 {
     using System;
 

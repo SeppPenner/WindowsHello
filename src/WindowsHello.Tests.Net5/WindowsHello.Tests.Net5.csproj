@@ -1,17 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net4.8</TargetFramework>
-
-    <IsPackable>false</IsPackable>
-
-    <RootNamespace>WindowsHello.Tests</RootNamespace>
-
-    <ApplicationIcon>Windows.ico</ApplicationIcon>
-
+<PropertyGroup>
     <OutputType>Library</OutputType>
-
-    <StartupObject />
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Windows.ico</ApplicationIcon>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -31,10 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WindowsHello\WindowsHello.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
 
 </Project>

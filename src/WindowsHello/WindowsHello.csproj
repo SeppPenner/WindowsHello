@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;net462;net47;net472;net48;</TargetFrameworks>
+    <TargetFrameworks>net46;net462;net47;net472;net48;net5.0-windows</TargetFrameworks>
     <AssemblyName>WindowsHello</AssemblyName>
     <RootNamespace>WindowsHello</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -16,12 +16,15 @@
     <RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <RepositoryType>Github</RepositoryType>
-    <PackageReleaseNotes>Version 1.0.6.0 (2020-06-05): Updated nuget packages, adjusted build to Visual Studio, moved changelog to extra file.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.0.7.0 (2021-01-01): Removed license year, moved changelog to extra file, adjusted folder structure, updated nuget packages, added Net 5.0.</PackageReleaseNotes>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
+	<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <LangVersion>latest</LangVersion>
+	<UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersionTask" Version="5.3.5">
+    <PackageReference Include="GitVersionTask" Version="5.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -35,6 +38,7 @@
     <None Include="..\..\License.txt">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\..\README.md">
       <Pack>True</Pack>

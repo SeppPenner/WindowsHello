@@ -2,7 +2,7 @@ WindowsHello
 ====================================
 
 WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) in aplications.
-The assembly was written and tested in .Net 4.8.
+The assembly was written and tested in .NetFramework 4.8.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/a8h66id7bqk07n79?svg=true)](https://ci.appveyor.com/project/SeppPenner/windowshello)
 [![GitHub issues](https://img.shields.io/github/issues/SeppPenner/WindowsHello.svg)](https://github.com/SeppPenner/WindowsHello/issues)
