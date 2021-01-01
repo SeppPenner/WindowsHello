@@ -244,7 +244,7 @@ namespace WindowsHello
 
                 ngcKeyHandle.Dispose();
                 var winHelloProvider = new WinHelloProvider(AuthProviderUiContext.With(message, windowHandle));
-                return instance ?? (instance = winHelloProvider);
+                return instance ??= winHelloProvider;
             }
         }
 
@@ -841,13 +841,11 @@ namespace WindowsHello
                     return;
                 }
 
-                switch (this.secStatus)
+                throw this.secStatus switch
                 {
-                    case NTE_USER_CANCELLED:
-                        throw new AuthProviderUserCancelledException();
-                    default:
-                        throw new AuthProviderSystemErrorException(name, this.secStatus);
-                }
+                    NTE_USER_CANCELLED => new AuthProviderUserCancelledException(),
+                    _ => new AuthProviderSystemErrorException(name, this.secStatus)
+                };
             }
         }
     }
