@@ -54,6 +54,12 @@ public void WindowsHelloTest()
 
 The project can be found on [nuget](https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/).
 
+## Install
+
+```bash
+dotnet add package HaemmerElectronics.SeppPenner.WindowsHello
+```
+
 ## Further links
 This project is mainly taken from https://github.com/sirAndros/KeePassWinHello.
 
