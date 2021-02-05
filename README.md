@@ -26,7 +26,7 @@ The assembly was written and tested in .Net 5.0.
 * https://dotnet.microsoft.com/download/dotnet-framework
 * https://dotnet.microsoft.com/download/dotnet/5.0
 
-## Basic usage (Version 1.0.4.0 and above):
+## Basic usage (Version 1.0.4.0 and above)
 ```csharp
 public void WindowsHelloTest()
 {
@@ -40,7 +40,7 @@ public void WindowsHelloTest()
 }
 ```
 
-## Basic usage (Before version 1.0.4.0):
+## Basic usage (Before version 1.0.4.0)
 ```csharp
 public void WindowsHelloTest()
 {
