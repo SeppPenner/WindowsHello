@@ -1,7 +1,7 @@
 Change history
 --------------
 
-* **Version 1.0.8.0 (2021-02-02)** : Updated nuget packages.
+* **Version 1.0.8.0 (2021-02-21)** : Updated nuget packages.
 * **Version 1.0.7.0 (2021-01-01)** : Removed license year, moved changelog to extra file, adjusted folder structure, updated nuget packages, moved to Net 5.0.
 * **Version 1.0.6.0 (2020-06-05)** : Updated nuget packages, adjusted build to Visual Studio, moved changelog to extra file.
 * **Version 1.0.5.0 (2020-05-10)** : Updated nuget packages.
