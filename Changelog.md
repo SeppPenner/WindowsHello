@@ -1,6 +1,7 @@
 Change history
 --------------
 
+* **Version 1.0.10.0 (2021-08-09)** : Updated nuget packages.
 * **Version 1.0.9.0 (2021-07-25)** : Updated nuget packages, enabled source linking for debugging.
 * **Version 1.0.8.0 (2021-02-21)** : Updated nuget packages.
 * **Version 1.0.7.0 (2021-01-01)** : Removed license year, moved changelog to extra file, adjusted folder structure, updated nuget packages, moved to Net 5.0.
