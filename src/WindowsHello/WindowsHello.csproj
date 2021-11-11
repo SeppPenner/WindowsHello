@@ -16,7 +16,7 @@
 		<RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
 		<PackageIcon>Icon.png</PackageIcon>
 		<RepositoryType>Github</RepositoryType>
-		<PackageReleaseNotes>Version 1.0.9.0 (2021-07-25): Updated nuget packages, enabled source linking for debugging.</PackageReleaseNotes>
+		<PackageReleaseNotes>Version 1.0.11.0 (2021-11-11): Updated nuget packages, added .Net 6.0.</PackageReleaseNotes>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
 		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
 		<LangVersion>latest</LangVersion>
