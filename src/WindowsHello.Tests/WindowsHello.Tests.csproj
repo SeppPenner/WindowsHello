@@ -2,15 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net4.8</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <RootNamespace>WindowsHello.Tests</RootNamespace>
-
     <ApplicationIcon>Windows.ico</ApplicationIcon>
-
     <OutputType>Library</OutputType>
-
+	<LangVersion>latest</LangVersion>
+	<Nullable>enable</Nullable>
     <StartupObject />
   </PropertyGroup>
 

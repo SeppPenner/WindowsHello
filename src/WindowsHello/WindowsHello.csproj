@@ -20,6 +20,7 @@
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
 		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
 		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>

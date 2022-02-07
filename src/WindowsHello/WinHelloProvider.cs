@@ -11,7 +11,6 @@ namespace WindowsHello
 {
     using System;
     using System.Diagnostics;
-    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
     using System.Security.Cryptography;
     using System.Security.Principal;
@@ -31,8 +30,6 @@ namespace WindowsHello
         /// <summary>
         ///     The BCrypt RSA algorithm.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string BCRYPT_RSA_ALGORITHM = "RSA";
 
         /// <summary>
@@ -49,107 +46,76 @@ namespace WindowsHello
         /// <summary>
         ///     The Microsoft passport key storage provider.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string MS_NGC_KEY_STORAGE_PROVIDER = "Microsoft Passport Key Storage Provider";
 
         /// <summary>
         /// The NCrypt allow decrypt flag.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NCRYPT_ALLOW_DECRYPT_FLAG = 0x00000001;
 
         /// <summary>
         /// The NCrypt allow key import flag.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NCRYPT_ALLOW_KEY_IMPORT_FLAG = 0x00000008;
 
         /// <summary>
         /// The NCrypt allow signing flag.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NCRYPT_ALLOW_SIGNING_FLAG = 0x00000002;
 
         /// <summary>
         ///     The NCrypt key usage.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_KEY_USAGE_PROPERTY = "Key Usage";
 
         /// <summary>
         ///     The NCrypt length.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_LENGTH_PROPERTY = "Length";
 
         /// <summary>
         ///     The NCrypt NGC cache type.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_NGC_CACHE_TYPE_PROPERTY = "NgcCacheType";
 
         /// <summary>
         /// The NCrypt NGC cache type property auth mandatory flag.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NCRYPT_NGC_CACHE_TYPE_PROPERTY_AUTH_MANDATORY_FLAG = 0x00000001;
 
         /// <summary>
         ///     The NCrypt NGC cache type (deprecated).
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_NGC_CACHE_TYPE_PROPERTY_DEPRECATED = "NgcCacheTypeProperty";
 
         /// <summary>
         /// The NCrypt pad PKCS1 flag.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NCRYPT_PAD_PKCS1_FLAG = 0x00000002;
 
         /// <summary>
         ///     The NCrypt pin cache is gesture required value.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_PIN_CACHE_IS_GESTURE_REQUIRED_PROPERTY = "PinCacheIsGestureRequired";
 
         /// <summary>
         ///     The NCrypt use context.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_USE_CONTEXT_PROPERTY = "Use Context";
 
         /// <summary>
         ///     The NCrypt window handle.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const string NCRYPT_WINDOW_HANDLE_PROPERTY = "HWND Handle";
 
         /// <summary>
         /// The NTE no key.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NTE_NO_KEY = unchecked((int)0x8009000D);
 
         /// <summary>
         /// The NTE user cancelled.
         /// </summary>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310:FieldNamesMustNotContainUnderscore", Justification = "Reviewed. Suppression is OK here.")]
-        // ReSharper disable once InconsistentNaming
         private const int NTE_USER_CANCELLED = unchecked((int)0x80090036);
 
         /// <summary>
@@ -165,41 +131,37 @@ namespace WindowsHello
         /// <summary>
         ///     The local key name.
         /// </summary>
-        private static readonly Lazy<string> LocalKeyName = new Lazy<string>(RetrieveLocalKeyName);
+        private static readonly Lazy<string> LocalKeyName = new (RetrieveLocalKeyName);
 
         /// <summary>
         ///     The mutex.
         /// </summary>
-        private static readonly object Mutex = new object();
+        private static readonly object Mutex = new();
 
         /// <summary>
         ///     The persistent key name.
         /// </summary>
-        private static Lazy<string> persistentKeyName = new Lazy<string>(RetrievePersistentKeyName);
+        private static Lazy<string> persistentKeyName = new(RetrievePersistentKeyName);
 
         /// <summary>
         ///     The current key name.
         /// </summary>
-        private static string currentKeyName;
+        private static string currentKeyName = string.Empty;
 
         /// <summary>
         ///     The Windows hello provider instance.
         /// </summary>
-        private static WinHelloProvider instance;
+        private static WinHelloProvider? instance;
 
         /// <summary>
         ///     The authentication provider UI context.
         /// </summary>
-        private static AuthProviderUiContext uiContext;
+        private static AuthProviderUiContext? uiContext;
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="WinHelloProvider" /> class.
         /// </summary>
         /// <param name="uIContext">The authentication provider UI context.</param>
-        [SuppressMessage(
-            "StyleCop.CSharp.NamingRules",
-            "SA1305:FieldNamesMustNotUseHungarianNotation",
-            Justification = "Reviewed. Suppression is OK here.")]
         private WinHelloProvider(AuthProviderUiContext uIContext)
         {
             if (!TryOpenPersistentKey(out var ngcKeyHandle))
@@ -257,11 +219,6 @@ namespace WindowsHello
         ///     The encrypted data as <see cref="T:byte[]" />.
         /// </returns>
         /// <exception cref="NotSupportedException">Windows Hello is not available</exception>
-        // ReSharper disable once UnusedMember.Global
-        [SuppressMessage(
-            "StyleCop.CSharp.NamingRules",
-            "SA1305:FieldNamesMustNotUseHungarianNotation",
-            Justification = "Reviewed. Suppression is OK here.")]
         public byte[] Encrypt(byte[] data)
         {
             byte[] cbResult;
@@ -285,7 +242,7 @@ namespace WindowsHello
                         data,
                         data.Length,
                         IntPtr.Zero,
-                        null,
+                        new byte[] {},
                         0,
                         out var pcbResult,
                         NCRYPT_PAD_PKCS1_FLAG).CheckStatus("NCryptEncrypt");
@@ -317,13 +274,13 @@ namespace WindowsHello
         ///     The decrypted data as <see cref="T:byte[]" />.
         /// </returns>
         /// <exception cref="T:System.NotSupportedException">Windows Hello is not available</exception>
-        // ReSharper disable once UnusedMember.Global
-        [SuppressMessage(
-            "StyleCop.CSharp.NamingRules",
-            "SA1305:FieldNamesMustNotUseHungarianNotation",
-            Justification = "Reviewed. Suppression is OK here.")]
         public byte[] PromptToDecrypt(byte[] data)
         {
+            if (uiContext is null)
+            {
+                throw new ArgumentNullException(nameof(uiContext), "The UI context wasn't set properly.");
+            }
+
             byte[] cbResult;
             NCryptOpenStorageProvider(out var ngcProviderHandle, MS_NGC_KEY_STORAGE_PROVIDER, 0)
                 .CheckStatus("NCryptOpenStorageProvider");
@@ -429,10 +386,6 @@ namespace WindowsHello
         /// </param>
         /// <param name="uIContext">The authentication provider UI context.</param>
         /// <returns>A new safe NCrypt key handle.</returns>
-        [SuppressMessage(
-            "StyleCop.CSharp.NamingRules",
-            "SA1305:FieldNamesMustNotUseHungarianNotation",
-            Justification = "Reviewed. Suppression is OK here.")]
         private static SafeNCryptKeyHandle CreatePersistentKey(bool overwriteExisting, AuthProviderUiContext uIContext)
         {
             NCryptOpenStorageProvider(out var ngcProviderHandle, MS_NGC_KEY_STORAGE_PROVIDER, 0)
@@ -532,7 +485,6 @@ namespace WindowsHello
         /// <param name="dwLegacyKeySpec">The legacy key spec.</param>
         /// <param name="dwFlags">The CNG key creation options.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NCryptCreatePersistedKey(
             SafeNCryptProviderHandle hProvider,
@@ -554,7 +506,6 @@ namespace WindowsHello
         /// <param name="pcbResult">The result.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll")]
         private static extern SECURITY_STATUS NCryptDecrypt(
             SafeNCryptKeyHandle hKey,
@@ -574,7 +525,6 @@ namespace WindowsHello
         /// <param name="hKey">The safe NCrypt key handle.</param>
         /// <param name="flags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll")]
         private static extern SECURITY_STATUS NCryptDeleteKey(SafeNCryptKeyHandle hKey, int flags);
 
@@ -590,7 +540,6 @@ namespace WindowsHello
         /// <param name="pcbResult">The result.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll")]
         private static extern SECURITY_STATUS NCryptEncrypt(
             SafeNCryptKeyHandle hKey,
@@ -610,7 +559,6 @@ namespace WindowsHello
         /// <param name="hKey">The safe NCrypt key handle.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll")]
         private static extern SECURITY_STATUS NCryptFinalizeKey(SafeNCryptKeyHandle hKey, int dwFlags);
 
@@ -624,7 +572,6 @@ namespace WindowsHello
         /// <param name="pcbResult">The result.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NCryptGetProperty(
             SafeNCryptHandle hObject,
@@ -643,7 +590,6 @@ namespace WindowsHello
         /// <param name="dwLegacyKeySpec">The legacy key spec.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NCryptOpenKey(
             SafeNCryptProviderHandle hProvider,
@@ -659,8 +605,6 @@ namespace WindowsHello
         /// <param name="pszProviderName">The PSZ provider name.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
-        [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1614:ElementParameterDocumentationMustHaveText", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NCryptOpenStorageProvider(
             [Out] out SafeNCryptProviderHandle phProvider,
@@ -676,7 +620,6 @@ namespace WindowsHello
         /// <param name="cbInput">The input CB value.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NCryptSetProperty(
             SafeNCryptHandle hObject,
@@ -694,7 +637,6 @@ namespace WindowsHello
         /// <param name="cbInput">The input CB value.</param>
         /// <param name="dwFlags">The flags.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("ncrypt.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NCryptSetProperty(
             SafeNCryptHandle hObject,
@@ -712,7 +654,6 @@ namespace WindowsHello
         /// <param name="dwReserved2">The DW reserved 2.</param>
         /// <param name="ppszKeyName">The PPSZ key name.</param>
         /// <returns>A new <see cref="SECURITY_STATUS"/>.</returns>
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
         [DllImport("cryptngc.dll", CharSet = CharSet.Unicode)]
         private static extern SECURITY_STATUS NgcGetDefaultDecryptionKeyName(
             string pszSid,
@@ -726,7 +667,7 @@ namespace WindowsHello
         /// <returns>The local key name as <see cref="string" />.</returns>
         private static string RetrieveLocalKeyName()
         {
-            NgcGetDefaultDecryptionKeyName(WindowsIdentity.GetCurrent().User?.Value, 0, 0, out var key);
+            NgcGetDefaultDecryptionKeyName(WindowsIdentity.GetCurrent().User?.Value ?? string.Empty, 0, 0, out var key);
             return key;
         }
 
@@ -855,7 +796,6 @@ namespace WindowsHello
     ///     The authentication provider UI context.
     /// </summary>
     /// <seealso cref="IWin32Window" />
-    [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:FileMayOnlyContainASingleClass", Justification = "Reviewed. Suppression is OK here.")]
     internal sealed class AuthProviderUiContext : IWin32Window
     {
         /// <summary>
