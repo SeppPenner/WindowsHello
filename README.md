@@ -14,11 +14,6 @@ WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](ht
 [![Gitter](https://badges.gitter.im/WindowsHello2/community.svg)](https://gitter.im/WindowsHello2/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Available for
-* NetFramework 4.6
-* NetFramework 4.6.2
-* NetFramework 4.7
-* NetFramework 4.7.2
-* NetFramework 4.8
 * Net 5.0
 * Net 6.0
 

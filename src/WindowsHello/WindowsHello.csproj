@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net46;net462;net47;net472;net48;net5.0-windows;net6.0-windows</TargetFrameworks>
+		<TargetFrameworks>net5.0-windows;net6.0-windows</TargetFrameworks>
 		<AssemblyName>WindowsHello</AssemblyName>
 		<RootNamespace>WindowsHello</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -16,7 +16,7 @@
 		<RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
 		<PackageIcon>Icon.png</PackageIcon>
 		<RepositoryType>Github</RepositoryType>
-		<PackageReleaseNotes>Version 1.0.11.0 (2021-11-11): Updated nuget packages, added .Net 6.0.</PackageReleaseNotes>
+		<PackageReleaseNotes>Version 1.0.12.0 (2022-02-18): Added nullable checks, added editorconfig, added file scoped namespaces, added global usings, removed native support for Net Framework (Breaking change).</PackageReleaseNotes>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
 		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
 		<LangVersion>latest</LangVersion>
@@ -26,10 +26,11 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
+		<PackageReference Include="GitVersion.MsBuild" Version="5.8.2">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

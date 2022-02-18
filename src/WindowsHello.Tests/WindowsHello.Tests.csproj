@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net4.8</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <IsPackable>false</IsPackable>
     <RootNamespace>WindowsHello.Tests</RootNamespace>
     <ApplicationIcon>Windows.ico</ApplicationIcon>
@@ -9,6 +9,7 @@
 	<LangVersion>latest</LangVersion>
 	<Nullable>enable</Nullable>
     <StartupObject />
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,11 +18,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="5.8.1">
+    <PackageReference Include="GitVersion.MsBuild" Version="5.8.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
   </ItemGroup>
