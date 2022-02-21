@@ -16,7 +16,6 @@ FOR /d /r . %%d in (bin,obj) DO (
 
 @ECHO on
 @ECHO.Building solution...
-cd .\src\WindowsHello
 @dotnet build -c Release -o bin/publish
 @ECHO.Deleting *.pdb files...
 @cd bin/publish
@@ -24,5 +23,6 @@ cd .\src\WindowsHello
 @ECHO.Build successful.
 
 dotnet nuget push *.nupkg -s "nuget.org" --skip-duplicate -k "%NUGET_API_KEY%"
+dotnet nuget push *.nupkg -s "github" --skip-duplicate
 @ECHO.Upload success. Press any key to exit.
 PAUSE
