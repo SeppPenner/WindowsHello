@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net5.0-windows;net6.0-windows</TargetFrameworks>
+        <UseWindowsForms>true</UseWindowsForms>
 		<AssemblyName>WindowsHello</AssemblyName>
 		<RootNamespace>WindowsHello</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -58,19 +59,11 @@
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0-windows' ">
-		<Reference Include="System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+		<Reference Include="System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
 	</ItemGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0-windows' ">
 		<Reference Include="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	</ItemGroup>
-
-	<PropertyGroup>
-		<SupportedFrameworks>|net46|net462|net47|net472|net48|</SupportedFrameworks>
-	</PropertyGroup>
-
-	<ItemGroup Condition="$(SupportedFrameworks.Contains('|$(TargetFramework)|'))">
-		<Reference Include="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
 	</ItemGroup>
 
 </Project>
