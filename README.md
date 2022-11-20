@@ -14,11 +14,10 @@ WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](ht
 [![Gitter](https://badges.gitter.im/WindowsHello2/community.svg)](https://gitter.im/WindowsHello2/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Available for
-* Net 5.0
 * Net 6.0
+* Net 7.0
 
 ## Net Framework latest and LTS versions
-* https://dotnet.microsoft.com/download/dotnet-framework
 * https://dotnet.microsoft.com/download/dotnet
 
 ## Basic usage (Version 1.0.4.0 and above)
