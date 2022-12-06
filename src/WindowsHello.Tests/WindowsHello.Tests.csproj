@@ -31,8 +31,4 @@
     <ProjectReference Include="..\WindowsHello\WindowsHello.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms" />
-  </ItemGroup>
-
 </Project>
