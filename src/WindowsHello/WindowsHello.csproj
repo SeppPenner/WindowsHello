@@ -17,7 +17,7 @@
         <RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
         <PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>Github</RepositoryType>
-        <PackageReleaseNotes>Version 1.1.0.0 (2022-11-20): Updated nuget packages, removed support for Net5.0, added support for Net7.0, removed tests for Net5.0.</PackageReleaseNotes>
+        <PackageReleaseNotes>Version 1.1.1.0 (2023-11-13): Updated NuGet packages.</PackageReleaseNotes>
         <PackageLicenseFile>License.txt</PackageLicenseFile>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
         <LangVersion>latest</LangVersion>
