@@ -1,34 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <IsPackable>false</IsPackable>
-    <RootNamespace>WindowsHello.Tests</RootNamespace>
-    <ApplicationIcon>Windows.ico</ApplicationIcon>
-    <OutputType>Library</OutputType>
-	<LangVersion>latest</LangVersion>
-	<Nullable>enable</Nullable>
-    <StartupObject />
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <RootNamespace>WindowsHello.Tests</RootNamespace>
+        <ApplicationIcon>Windows.ico</ApplicationIcon>
+        <OutputType>Library</OutputType>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <StartupObject />
+        <ImplicitUsings>enable</ImplicitUsings>
+        <NoWarn>NU1803</NoWarn>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>full</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.0.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+        <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+        <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\WindowsHello\WindowsHello.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\WindowsHello\WindowsHello.csproj" />
+    </ItemGroup>
 
 </Project>

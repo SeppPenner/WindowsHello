@@ -1,69 +1,71 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
+    <PropertyGroup>
+        <TargetFrameworks>net6.0-windows;net7.0-windows</TargetFrameworks>
         <UseWindowsForms>true</UseWindowsForms>
-		<AssemblyName>WindowsHello</AssemblyName>
-		<RootNamespace>WindowsHello</RootNamespace>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-		<PackageId>HaemmerElectronics.SeppPenner.WindowsHello</PackageId>
-		<Authors>SeppPenner</Authors>
-		<Company>Hämmer Electronics</Company>
-		<Copyright>Copyright © Hämmer Electronics</Copyright>
-		<Description>WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) in aplications.</Description>
-		<PackageTags>c# csharp windows hello windows-hello</PackageTags>
-		<PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
-		<PackageIcon>Icon.png</PackageIcon>
-		<RepositoryType>Github</RepositoryType>
-		<PackageReleaseNotes>Version 1.1.0.0 (2022-11-20): Updated nuget packages, removed support for Net5.0, added support for Net7.0, removed tests for Net5.0.</PackageReleaseNotes>
-		<PackageLicenseFile>License.txt</PackageLicenseFile>
-		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
-		<LangVersion>latest</LangVersion>
-		<Nullable>enable</Nullable>
-		<UseWindowsForms>true</UseWindowsForms>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<IncludeSymbols>true</IncludeSymbols>
-		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <AssemblyName>WindowsHello</AssemblyName>
+        <RootNamespace>WindowsHello</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageId>HaemmerElectronics.SeppPenner.WindowsHello</PackageId>
+        <Authors>SeppPenner</Authors>
+        <Company>Hämmer Electronics</Company>
+        <Copyright>Copyright © Hämmer Electronics</Copyright>
+        <Description>WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](https://support.microsoft.com/de-de/help/17215/windows-10-what-is-hello) in aplications.</Description>
+        <PackageTags>c# csharp windows hello windows-hello</PackageTags>
+        <PackageProjectUrl>https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
+        <PackageIcon>Icon.png</PackageIcon>
+        <RepositoryType>Github</RepositoryType>
+        <PackageReleaseNotes>Version 1.1.0.0 (2022-11-20): Updated nuget packages, removed support for Net5.0, added support for Net7.0, removed tests for Net5.0.</PackageReleaseNotes>
+        <PackageLicenseFile>License.txt</PackageLicenseFile>
+        <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <ImplicitUsings>enable</ImplicitUsings>
-	</PropertyGroup>
+        <NoWarn>NU1803</NoWarn>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<None Include="..\..\Icon.png">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
-		<None Include="..\..\License.txt">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
-		<None Include="..\..\README.md">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
-		<None Include="..\..\Changelog.md">
-			<Pack>True</Pack>
-			<PackagePath></PackagePath>
-		</None>
-	</ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\Icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\License.txt">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\Changelog.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net7.0-windows' ">
-		<Reference Include="System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	</ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net7.0-windows' ">
+        <Reference Include="System.Windows.Forms, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0-windows' ">
-		<Reference Include="System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-	</ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0-windows' ">
+        <Reference Include="System.Windows.Forms, Version=6.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </ItemGroup>
 
 </Project>
