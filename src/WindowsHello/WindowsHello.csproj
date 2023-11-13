@@ -30,6 +30,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <NoWarn>NU1803</NoWarn>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
