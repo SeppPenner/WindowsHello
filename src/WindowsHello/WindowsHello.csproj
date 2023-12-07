@@ -17,7 +17,7 @@
         <RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
         <PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>Github</RepositoryType>
-        <PackageReleaseNotes>Version 1.1.1.0 (2023-11-13): Updated NuGet packages.</PackageReleaseNotes>
+        <PackageReleaseNotes>Version 1.1.2.0 (2023-12-07): Updated NuGet packages, added support for Net8, fixed AuthProviderSystemErrorException, fixes https://github.com/SeppPenner/WindowsHello/issues/6.</PackageReleaseNotes>
         <PackageLicenseFile>License.txt</PackageLicenseFile>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
         <LangVersion>latest</LangVersion>
