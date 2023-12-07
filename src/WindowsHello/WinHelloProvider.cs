@@ -230,7 +230,7 @@ public class WinHelloProvider : IAuthProvider
                     data,
                     data.Length,
                     IntPtr.Zero,
-                    Array.Empty<byte>(),
+                    null,
                     0,
                     out var pcbResult,
                     NCRYPT_PAD_PKCS1_FLAG).CheckStatus("NCryptEncrypt");
@@ -535,7 +535,7 @@ public class WinHelloProvider : IAuthProvider
         int cbInput,
         IntPtr pvPaddingZero,
         [Out] [MarshalAs(UnmanagedType.LPArray)]
-        byte[] pbOutput,
+        byte[]? pbOutput,
         int cbOutput,
         [Out] out int pcbResult,
         int dwFlags);
