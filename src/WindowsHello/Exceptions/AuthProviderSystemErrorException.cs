@@ -40,15 +40,4 @@ public class AuthProviderSystemErrorException : EnvironmentErrorException
     public AuthProviderSystemErrorException(string message, Exception inner) : base(message, inner)
     {
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AuthProviderSystemErrorException"/> class.
-    /// </summary>
-    /// <param name="info">The serialization information.</param>
-    /// <param name="context">The streaming context.</param>
-    protected AuthProviderSystemErrorException(
-        SerializationInfo info,
-        StreamingContext context) : base(info, context)
-    {
-    }
 }

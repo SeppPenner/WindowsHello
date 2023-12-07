@@ -39,13 +39,4 @@ public class AuthProviderIsUnavailableException : AuthProviderException
     public AuthProviderIsUnavailableException(string message, Exception inner) : base(message, inner)
     {
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AuthProviderIsUnavailableException"/> class.
-    /// </summary>
-    /// <param name="info">The serialization information.</param>
-    /// <param name="context">The streaming context.</param>
-    protected AuthProviderIsUnavailableException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
 }

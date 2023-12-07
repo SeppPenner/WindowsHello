@@ -41,13 +41,4 @@ public class EnvironmentErrorException : WindowsHelloException
         message + "\nError code: " + errorCode.ToString("X"))
     {
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="EnvironmentErrorException"/> class.
-    /// </summary>
-    /// <param name="info">The serialization information.</param>
-    /// <param name="context">The streaming context.</param>
-    protected EnvironmentErrorException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
 }

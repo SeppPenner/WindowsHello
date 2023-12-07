@@ -32,13 +32,4 @@ public class WindowsHelloException : Exception
     public WindowsHelloException(string message, Exception inner) : base(message, inner)
     {
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WindowsHelloException"/> class.
-    /// </summary>
-    /// <param name="info">The serialization information.</param>
-    /// <param name="context">The streaming context.</param>
-    protected WindowsHelloException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
 }

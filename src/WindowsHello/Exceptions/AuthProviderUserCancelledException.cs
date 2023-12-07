@@ -33,13 +33,4 @@ public class AuthProviderUserCancelledException : AuthProviderException
     public AuthProviderUserCancelledException(string message, Exception inner) : base(message, inner)
     {
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AuthProviderUserCancelledException"/> class.
-    /// </summary>
-    /// <param name="info">The serialization information.</param>
-    /// <param name="context">The streaming context.</param>
-    protected AuthProviderUserCancelledException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
 }

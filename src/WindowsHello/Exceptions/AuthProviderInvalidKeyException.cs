@@ -35,13 +35,4 @@ public class AuthProviderInvalidKeyException : AuthProviderException
     protected AuthProviderInvalidKeyException()
     {
     }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AuthProviderInvalidKeyException"/> class.
-    /// </summary>
-    /// <param name="info">The serialization information.</param>
-    /// <param name="context">The streaming context.</param>
-    protected AuthProviderInvalidKeyException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
 }
