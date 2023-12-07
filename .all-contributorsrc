@@ -8,15 +8,6 @@
   "commitConvention": "angular",
   "contributors": [
     {
-      "login": "danergo",
-      "name": "danergo",
-      "avatar_url": "https://avatars.githubusercontent.com/u/11708344?v=4",
-      "profile": "https://github.com/danergo",
-      "contributions": [
-        "test"
-      ]
-    },
-    {
       "login": "SeppPenner",
       "name": "HansM",
       "avatar_url": "https://avatars.githubusercontent.com/u/9639361?v=4",
@@ -27,6 +18,15 @@
         "example",
         "maintenance",
         "projectManagement",
+        "test"
+      ]
+    },
+	{
+      "login": "danergo",
+      "name": "danergo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11708344?v=4",
+      "profile": "https://github.com/danergo",
+      "contributions": [
         "test"
       ]
     }
