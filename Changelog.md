@@ -1,6 +1,7 @@
 Change history
 --------------
 
+* **Version 1.1.3.0 (2024-05-16)** : Removed support for Net7.0.
 * **Version 1.1.2.0 (2023-12-07)** : Updated NuGet packages, added support for Net8, fixed AuthProviderSystemErrorException, fixes https://github.com/SeppPenner/WindowsHello/issues/6.
 * **Version 1.1.1.0 (2023-11-13)** : Updated NuGet packages.
 * **Version 1.1.0.0 (2022-11-20)** : Updated nuget packages, removed support for Net5.0, added support for Net7.0, removed tests for Net5.0.
