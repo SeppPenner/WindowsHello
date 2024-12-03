@@ -18,7 +18,7 @@
         <PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>Github</RepositoryType>
         <PackageReleaseNotes>Version 1.1.4.0 (2024-11-24): Removed support for Net6.0, added support for Net9.0, updated NuGet packages.</PackageReleaseNotes>
-        <PackageLicenseFile>License.txt</PackageLicenseFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
