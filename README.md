@@ -21,8 +21,8 @@ WindowsHello is an assembly/ library to work with [Microsoft's Windows Hello](ht
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Available for
-* Net 6.0
 * Net 8.0
+* Net 9.0
 
 ## Net Framework latest and LTS versions
 * https://dotnet.microsoft.com/download/dotnet
