@@ -193,7 +193,10 @@ Do not silently "clean up" these, they are existing behaviour:
   deletes every `bin` and `obj` first. Never push from a folder you did not clean.
 - **`BuildAndPushPackage.bat` needs two environment variables** (`NUGET_API_KEY`, `GITHUB_API_KEY`)
   and two configured sources named `nuget.org` and `github`. It ends with `PAUSE`, so it is meant
-  to be double clicked, and `cd .\src` at the top makes it relative to the repository root.
+  to be double clicked, and `cd .\src` at the top makes it relative to the repository root. Every
+  push line starts with `@` and the script never turns echo on: with echo on, cmd writes the
+  command line to the console **after** expanding the variables, which puts both API keys on
+  screen and into every captured log. Do not remove those `@` characters.
 - **AppVeyor badge without CI in the repository.** `README.md` links an AppVeyor build that is
   configured outside of this repository. There is no pipeline file here.
 - **`src/WindowsHello.sln.DotSettings`** is tracked and holds nothing but a ReSharper user
