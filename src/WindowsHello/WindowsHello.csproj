@@ -17,7 +17,7 @@
         <RepositoryUrl>https://github.com/SeppPenner/WindowsHello</RepositoryUrl>
         <PackageIcon>Icon.png</PackageIcon>
         <RepositoryType>Github</RepositoryType>
-        <PackageReleaseNotes>Version 1.1.4.0 (2024-11-24): Removed support for Net6.0, added support for Net9.0, updated NuGet packages.</PackageReleaseNotes>
+        <PackageReleaseNotes>Version 1.1.5.0 (2026-08-19): Removed support for Net9.0, added support for Net10.0, updated NuGet packages, SetPersistentKeyName now switches the key that is used for encryption and decryption (Breaking change).</PackageReleaseNotes>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
         <LangVersion>latest</LangVersion>
