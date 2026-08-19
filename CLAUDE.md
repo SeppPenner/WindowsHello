@@ -15,8 +15,8 @@ push. There is no installer and no application, the demo lives in the Readme.
 One solution `src/WindowsHello.sln` with exactly two projects:
 
 - `src/WindowsHello/WindowsHello.csproj`, the library. Multi-targets `net8.0-windows` and
-  `net9.0-windows`, `UseWindowsForms` enabled.
-- `src/WindowsHello.Tests/WindowsHello.Tests.csproj`, MSTest, `net9.0-windows`, `IsPackable`
+  `net10.0-windows`, `UseWindowsForms` enabled.
+- `src/WindowsHello.Tests/WindowsHello.Tests.csproj`, MSTest, `net10.0-windows`, `IsPackable`
   false.
 
 Layout inside `src/WindowsHello`:
@@ -64,24 +64,29 @@ dotnet build src/WindowsHello.sln -c Release
 dotnet test src/WindowsHello.sln
 ```
 
-- The library multi-targets `net8.0-windows` and `net9.0-windows`, the test project builds for
-  `net9.0-windows` only. `RuntimeIdentifiers` is `win-x64`.
+- The library multi-targets `net8.0-windows` and `net10.0-windows`, the test project builds for
+  `net10.0-windows` only. `RuntimeIdentifiers` is `win-x64`. The repository follows the sibling
+  repositories in keeping the LTS framework plus the newest one, so a new .NET replaces the
+  middle entry instead of being appended.
 - All build properties live directly in the two `.csproj` files. `src/Directory.Build.props` exists
   but sets nothing except `GenerateDocumentationFile`, which is why every type and member needs an
   XML doc comment.
 - `TreatWarningsAsErrors` is enabled in both projects, so every warning breaks the build, NuGet
   warnings (`NU****`) from restore included. A clean build reports zero warnings, keep it that way.
 - `NU1803` (HTTP source usage during restore) is the one warning suppressed via `NoWarn`. Fix
-  warnings instead of extending that list. `NuGetAudit` is not configured, so restore only reports
-  a vulnerable package when the default audit level does.
-- Versions come from GitVersion.MsBuild out of the git tags, for example `1.1.5-3` for the third
-  commit after tag `1.1.4`. Never edit an assembly version by hand. The one version string that
+  warnings instead of extending that list. `NuGetAudit` and `NuGetAuditMode=all` are on, so a
+  vulnerable transitive package fails the build too.
+- Versions come from GitVersion.MsBuild out of the git tags, for example `1.1.6-1` for the first
+  commit after tag `1.1.5`. Never edit an assembly version by hand. The one version string that
   **is** maintained by hand is `PackageReleaseNotes` in `WindowsHello.csproj`, see "Releasing".
 - Restore needs nuget.org. If a private feed is configured globally on the machine and answers 404
   for public packages, restore fails with `NU1301`. Then build with an explicit source:
   `dotnet build src/WindowsHello.sln --source https://api.nuget.org/v3/index.json`.
 - Building for `net8.0-windows` works without a .NET 8 SDK on the machine, the reference packs come
-  from NuGet. A newer SDK is enough for the whole solution.
+  from NuGet. A .NET 10 SDK is enough for the whole solution.
+- The test project uses the same package set as the sibling repositories:
+  `Microsoft.NET.Test.Sdk`, `MSTest.TestAdapter`, `MSTest.TestFramework`, `coverlet.collector` and
+  `GitVersion.MsBuild`.
 - `Delete-BIN-OBJ-Folders.bat` removes every `bin` and `obj` below the repository root. Useful
   because `GeneratePackageOnBuild` leaves old `.nupkg` files behind, see "Known quirks".
 
@@ -159,6 +164,13 @@ Do not silently "clean up" these, they are existing behaviour:
   `<SID>//WindowsHello/<SubDomain>/<name>`, and with `SubDomain = ""` that leaves a double slash in
   the middle. Changing the constant or the format string invalidates every existing key, because the
   name is how the key is found.
+- **`SetPersistentKeyName` switches the key only since 1.1.5.0.** Up to 1.1.4.0 the setter stored
+  the new name in `persistentKeyName` and stopped there, while `Encrypt` and `PromptToDecrypt` read
+  `currentKeyName`, which the constructor had set to the default name. The name passed in was
+  therefore ignored. Since 1.1.5.0 the setter also creates the key when it does not exist and moves
+  `currentKeyName` over, so the first call for an unknown name shows the Hello dialog. Anything an
+  application encrypted with 1.1.4.0 or older after calling the setter sits under the **default**
+  key, not under the named one.
 - **`SetPersistentKeyName` sanitizes with two `Replace` calls.**
   `Replace("/", string.Empty).Replace("//", string.Empty)` is redundant, after the first call no
   slash is left. It is harmless and stays.
@@ -195,7 +207,7 @@ Do not silently "clean up" these, they are existing behaviour:
 
 1. Make the change.
 2. Add an entry at the top of `Changelog.md` in the existing format:
-   `* **Version 1.1.5.0 (2026-08-18)** : Short description.`
+   `* **Version 1.1.6.0 (YYYY-MM-DD)** : Short description.`
 3. Update `PackageReleaseNotes` in `src/WindowsHello/WindowsHello.csproj` to the same text. This is
    the one place where a version number is written by hand, GitVersion does not fill it.
 4. Commit that.
@@ -206,7 +218,7 @@ Do not silently "clean up" these, they are existing behaviour:
 7. `BuildAndPushPackage.bat` builds and pushes to nuget.org and to the GitHub package feed.
 8. Push the commits and the tag.
 
-The version in the `Changelog.md` has four parts (`1.1.5.0`), the tag has three (`1.1.5`).
+The version in the `Changelog.md` has four parts (`1.1.6.0`), the tag has three (`1.1.6`).
 GitVersion turns the tag into the assembly version. A published NuGet version can never be
 replaced, so the tag has to be right before the push, not after.
 
