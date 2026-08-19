@@ -34,7 +34,7 @@ public void WindowsHelloTest()
     var handle = new IntPtr();
     var data = new byte[] { 0x32, 0x32 };
     var provider = WinHelloProvider.CreateInstance("Hello", handle);
-    // Set the persistent key name if you want:
+    // Set the persistent key name if you want, this creates the key if it does not exist yet:
     provider.SetPersistentKeyName("Test");
     var encryptedData = provider.Encrypt(data);
     var decryptedData = provider.PromptToDecrypt(encryptedData);

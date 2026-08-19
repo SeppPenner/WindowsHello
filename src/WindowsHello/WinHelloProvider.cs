@@ -187,13 +187,9 @@ public class WinHelloProvider : IAuthProvider
 
         lock (Mutex)
         {
-            if (!TryOpenPersistentKey(out var ngcKeyHandle))
-            {
-                CreatePersistentKey(true, AuthProviderUiContext.With(message, windowHandle)).Dispose();
-            }
-
-            ngcKeyHandle.Dispose();
-            var winHelloProvider = new WinHelloProvider(AuthProviderUiContext.With(message, windowHandle));
+            var newUiContext = AuthProviderUiContext.With(message, windowHandle);
+            EnsurePersistentKey(newUiContext);
+            var winHelloProvider = new WinHelloProvider(newUiContext);
             return instance ??= winHelloProvider;
         }
     }
@@ -316,15 +312,28 @@ public class WinHelloProvider : IAuthProvider
     }
 
     /// <summary>
-    ///     Sets the persistent key name.
+    ///     Sets the persistent key name and switches encryption and decryption over to that key.
+    ///     A key that does not exist yet is created, which shows the Windows Hello dialog.
     /// </summary>
     /// <param name="persistentName">The persistent name to use.</param>
+    /// <exception cref="ArgumentNullException">Thrown if the UI context wasn't set properly.</exception>
     public void SetPersistentKeyName(string persistentName)
     {
+        if (uiContext is null)
+        {
+            throw new ArgumentNullException(nameof(uiContext), "The UI context wasn't set properly.");
+        }
+
         var sid = WindowsIdentity.GetCurrent().User?.Value;
         var value = sid + "//" + Domain + "/" + SubDomain + "/"
                     + persistentName.Replace("/", string.Empty).Replace("//", string.Empty);
-        persistentKeyName = new Lazy<string>(() => value);
+
+        lock (Mutex)
+        {
+            persistentKeyName = new Lazy<string>(() => value);
+            EnsurePersistentKey(uiContext);
+            currentKeyName = persistentKeyName.Value;
+        }
     }
 
     /// <summary>
@@ -449,6 +458,20 @@ public class WinHelloProvider : IAuthProvider
             NCryptDeleteKey(ngcKeyHandle, 0).CheckStatus("NCryptDeleteKey");
             ngcKeyHandle.SetHandleAsInvalid();
         }
+    }
+
+    /// <summary>
+    ///     Makes sure that the persistent key exists, creating it if it does not.
+    /// </summary>
+    /// <param name="uIContext">The authentication provider UI context.</param>
+    private static void EnsurePersistentKey(AuthProviderUiContext uIContext)
+    {
+        if (!TryOpenPersistentKey(out var ngcKeyHandle))
+        {
+            CreatePersistentKey(true, uIContext).Dispose();
+        }
+
+        ngcKeyHandle.Dispose();
     }
 
     /// <summary>

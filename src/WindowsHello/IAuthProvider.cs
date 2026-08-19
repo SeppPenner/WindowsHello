@@ -29,7 +29,7 @@ public interface IAuthProvider
     byte[] Encrypt(byte[] data);
 
     /// <summary>
-    /// Sets the persistent key name.
+    /// Sets the persistent key name and switches encryption and decryption over to that key.
     /// </summary>
     /// <param name="persistentName">The persistent name to use.</param>
     void SetPersistentKeyName(string persistentName);
