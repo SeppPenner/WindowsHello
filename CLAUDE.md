@@ -14,9 +14,9 @@ push. There is no installer and no application, the demo lives in the Readme.
 
 One solution `src/WindowsHello.sln` with exactly two projects:
 
-- `src/WindowsHello/WindowsHello.csproj`, the library. Multi-targets `net8.0-windows` and
-  `net10.0-windows`, `UseWindowsForms` enabled.
-- `src/WindowsHello.Tests/WindowsHello.Tests.csproj`, MSTest, `net10.0-windows`, `IsPackable`
+- `src/WindowsHello/WindowsHello.csproj`, the library. Multi-targets `net10.0-windows` and
+  `net11.0-windows`, `UseWindowsForms` enabled.
+- `src/WindowsHello.Tests/WindowsHello.Tests.csproj`, MSTest, `net11.0-windows`, `IsPackable`
   false.
 
 Layout inside `src/WindowsHello`:
@@ -65,8 +65,8 @@ dotnet build src/WindowsHello.sln -c Release
 dotnet test src/WindowsHello.sln
 ```
 
-- The library multi-targets `net8.0-windows` and `net10.0-windows`, the test project builds for
-  `net10.0-windows` only. `RuntimeIdentifiers` is `win-x64`. The repository follows the sibling
+- The library multi-targets `net10.0-windows` and `net11.0-windows`, the test project builds for
+  `net11.0-windows` only. `RuntimeIdentifiers` is `win-x64`. The repository follows the sibling
   repositories in keeping the LTS framework plus the newest one, so a new .NET replaces the
   middle entry instead of being appended.
 - All build properties live directly in the two `.csproj` files. `src/Directory.Build.props` exists
@@ -83,8 +83,9 @@ dotnet test src/WindowsHello.sln
 - Restore needs nuget.org. If a private feed is configured globally on the machine and answers 404
   for public packages, restore fails with `NU1301`. Then build with an explicit source:
   `dotnet build src/WindowsHello.sln --source https://api.nuget.org/v3/index.json`.
-- Building for `net8.0-windows` works without a .NET 8 SDK on the machine, the reference packs come
-  from NuGet. A .NET 10 SDK is enough for the whole solution.
+- Building needs the .NET 11 SDK, it builds the `net10.0-windows` target as well. `net8.0-windows`
+  was dropped after version 1.1.5.0. Keep the test project on the newest framework the library
+  targets.
 - The test project uses the same package set as the sibling repositories:
   `Microsoft.NET.Test.Sdk`, `MSTest.TestAdapter`, `MSTest.TestFramework`, `coverlet.collector` and
   `GitVersion.MsBuild`.
