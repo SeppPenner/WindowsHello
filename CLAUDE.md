@@ -49,8 +49,9 @@ Layout inside `src/WindowsHello.Tests`:
 - `GlobalUsings.cs`: the single using of the test project.
 
 Repository root: `README.md` (the only user documentation, with the usage sample and the
-contributors table), `Changelog.md`, `Updating.md` (the five release steps), `License.txt` (MIT),
-`Icon.png` (the package icon), `BuildAndPushPackage.bat`, `Delete-BIN-OBJ-Folders.bat`,
+contributors table), `Changelog.md`, `Updating.md` (five short release lines, the complete process
+is under `## Releasing` below), `License.txt` (MIT), `Icon.png` (the package icon),
+`BuildAndPushPackage.bat`, `Delete-BIN-OBJ-Folders.bat`,
 `.all-contributorsrc`, `.gitattributes` and `.gitignore`. There is no `.github` folder, no
 `HowToUse.md` and no screenshots.
 
@@ -208,22 +209,63 @@ Do not silently "clean up" these, they are existing behaviour:
 
 ## Releasing
 
+**Every new version is released completely.** Changelog, README, nuget.org, GitHub Packages and a
+GitHub release belong to every version, none of these steps is optional and none of them waits for
+a separate request.
+
 1. Make the change.
 2. Add an entry at the top of `Changelog.md` in the existing format:
-   `* **Version 1.1.6.0 (YYYY-MM-DD)** : Short description.`
-3. Update `PackageReleaseNotes` in `src/WindowsHello/WindowsHello.csproj` to the same text. This is
-   the one place where a version number is written by hand, GitVersion does not fill it.
-4. Commit that.
-5. Tag the commit with the plain version number, no `v` prefix (`1.1.5`, `1.1.4`, ...). The existing
+   `* **Version 1.1.5.0 (2026-08-19)** : Short description.`
+3. Update `PackageReleaseNotes` in `src/WindowsHello/WindowsHello.csproj` to the same text, in the
+   format `Version 1.1.5.0 (2026-08-19): Short description.` This is the one place where a version
+   number is written by hand, GitVersion does not fill it.
+4. Update `README.md` for every version. The `## Available for` list has to match the target
+   frameworks, the usage sample has to compile against the current API, and nothing there may
+   describe a state the package has left behind.
+5. Commit that.
+6. Tag the commit with the plain version number, no `v` prefix (`1.1.5`, `1.1.4`, ...). The existing
    tags are lightweight tags, create new ones the same way.
-6. Only now build the package, because GitVersion reads the tag. Without the tag the package gets a
-   prerelease version such as `1.1.5-3` and is unusable as a release.
-7. `BuildAndPushPackage.bat` builds and pushes to nuget.org and to the GitHub package feed.
-8. Push the commits and the tag.
+7. Push the commits and the tag.
+8. Only then build the package, and build it while the tag is the newest commit. GitVersion takes
+   the version from the tag plus the distance to it, so a build before the tag or after another
+   commit produces a prerelease version like `1.1.6-3+Branch.master.Sha...`, and that version would
+   end up on nuget.org. `git describe --tags` has to answer with the plain tag.
+9. Publish to nuget.org with `BuildAndPushPackage.bat`, started from the repository root, its first
+   line is `cd .\src`. It deletes every `bin` and `obj` below `src`, builds `-c Release` and pushes
+   the `.nupkg` and the `.snupkg` to nuget.org with `%NUGET_API_KEY%` and to the NuGet source named
+   `github` with `%GITHUB_API_KEY%`. It ends with `PAUSE`, so it wants a console. Call it with its
+   full path: the Claude Code shell sets `NoDefaultCurrentDirectoryInExePath=1`, so cmd does not
+   find a bare `BuildAndPushPackage.bat` in the current directory. Because it always rebuilds, it
+   is only correct as long as no commit sits on top of the tag. If one does, push the package that
+   was built from the tagged state instead, by its file name and not with the wildcard, because
+   `GeneratePackageOnBuild` leaves a `.nupkg` of every intermediate build in `bin`:
+   `dotnet nuget push HaemmerElectronics.SeppPenner.WindowsHello.1.1.5.nupkg -s "nuget.org" --skip-duplicate -k %NUGET_API_KEY%`
+   in `src/WindowsHello/bin/Release`. That command takes the matching `.snupkg` with it. A push to
+   nuget.org cannot be taken back, the version is burned even after unlisting. nuget.org needs a
+   few minutes to validate a new version before it is listed.
+10. Publish the same `.nupkg` to GitHub Packages,
+    `https://nuget.pkg.github.com/SeppPenner/index.json`. The script only reaches it if a NuGet
+    source named `github` is registered on the machine, `dotnet nuget list source` shows that. On
+    2026-11-24 only nuget.org was registered here, so the two `github` lines of the script fail and
+    the push has to be done by hand in `src/WindowsHello/bin/Release`:
+    `dotnet nuget push HaemmerElectronics.SeppPenner.WindowsHello.1.1.5.nupkg -s https://nuget.pkg.github.com/SeppPenner/index.json --skip-duplicate --api-key <token>`.
+    The API key is a GitHub token with the scope `write:packages`, for example from
+    `gh auth token`. If `gh auth status` lists no `write:packages`, the user has to run
+    `gh auth refresh -h github.com -s write:packages,read:packages`, it needs a browser login.
+    GitHub Packages takes no symbol packages, push the `.nupkg` only.
+11. Create the GitHub release:
+    `gh release create 1.1.5 -R SeppPenner/WindowsHello --verify-tag --latest --title "Version 1.1.5.0 (2026-08-19)" --notes-file <file>`.
+    The notes are the changelog sentence plus the line
+    `NuGet: https://www.nuget.org/packages/HaemmerElectronics.SeppPenner.WindowsHello/1.1.5`. Write
+    credits as `` `@name` `` in backticks, a bare `@name` notifies that person again.
 
-The version in the `Changelog.md` has four parts (`1.1.6.0`), the tag has three (`1.1.6`).
-GitVersion turns the tag into the assembly version. A published NuGet version can never be
-replaced, so the tag has to be right before the push, not after.
+The version in the `Changelog.md` has four parts (`1.1.5.0`), the tag has three (`1.1.5`).
+GitVersion turns the tag into the assembly version.
+
+nuget.org holds 1.0.0, 1.0.0.1, 1.0.2 to 1.0.8 and 1.0.10 to 1.1.5. The tags start with 1.0.3, and
+the tag 1.0.9 was never published on nuget.org. On 2026-11-24 no tag had a GitHub release yet, and
+GitHub Packages held 1.0.7, 1.0.8, 1.0.10 to 1.0.12 and 1.1.2 to 1.1.5, the older history there is
+incomplete.
 
 ## Git
 
