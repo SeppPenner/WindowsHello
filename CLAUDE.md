@@ -263,10 +263,9 @@ a separate request.
 The version in the `Changelog.md` has four parts (`1.1.5.0`), the tag has three (`1.1.5`).
 GitVersion turns the tag into the assembly version.
 
-nuget.org holds 1.0.0, 1.0.0.1, 1.0.2 to 1.0.8 and 1.0.10 to 1.1.5. The tags start with 1.0.3, and
-the tag 1.0.9 was never published on nuget.org. On 2026-11-24 no tag had a GitHub release yet, and
-GitHub Packages held 1.0.7, 1.0.8, 1.0.10 to 1.0.12 and 1.1.2 to 1.1.5, the older history there is
-incomplete.
+nuget.org and GitHub Packages hold 1.0.0, 1.0.0.1, 1.0.2 to 1.0.8 and 1.0.10 to 1.1.6. The tags
+start with 1.0.3, so the versions before it have no GitHub release. The tag 1.0.9 of 2021 was never
+published on nuget.org and stays that way, its GitHub release has no NuGet link. The missing versions on GitHub Packages and the releases were added on 2026-11-24.
 
 ## Git
 

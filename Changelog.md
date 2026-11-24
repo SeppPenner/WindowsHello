@@ -1,6 +1,7 @@
 Change history
 --------------
 
+* **Version 1.1.6.0 (2026-11-24)** : Removed support for Net8.0 as it is out of support, added support for Net11.0, updated NuGet packages.
 * **Version 1.1.5.0 (2026-08-19)** : Removed support for Net9.0, added support for Net10.0, updated NuGet packages, SetPersistentKeyName now switches the key that is used for encryption and decryption (Breaking change).
 * **Version 1.1.4.0 (2024-11-24)** : Removed support for Net6.0, added support for Net9.0, updated NuGet packages.
 * **Version 1.1.3.0 (2024-05-16)** : Removed support for Net7.0.
